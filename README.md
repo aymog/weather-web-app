@@ -3,6 +3,8 @@
 #### A working version of the app has been deployed to heroku and can be accessed using the following link:
 ### https://react-weather-web-app.herokuapp.com/
 
+Please note that the free version of the AccuWeather API only allows a maximum of 50 API calls per day.
+
 ## Database Schema
 
 A database schema describing how the retrieved data for each city should be stored in a relational database has been provided and can be found here: 
