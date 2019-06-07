@@ -1,0 +1,21 @@
+Table WeatherData {
+  id int [pk]
+  dataSupplierName varchar
+  temperature int
+  humidity int
+  conditionsDescription varchar
+}
+
+Table Cities {
+  id int [primary key]
+  name varchar
+  countryCode char[2]
+}
+
+Table CityWeather {
+  cityID int 
+  weatherDataID int
+}
+
+Ref: CityWeather.cityID > Cities.id
+Ref: CityWeather.weatherDataID > WeatherData.id
