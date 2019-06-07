@@ -94,3 +94,11 @@ button {
   border-color: #51a7bd;
   color: #ffffff;
 }
+
+input {
+  box-shadow: 1px 1px 5px #000000;
+  border-radius: 5px;
+  margin: 1%;
+  background-color: #aed0d8;
+  border-color: #c6e3eb;
+}
