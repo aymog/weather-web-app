@@ -1,31 +1,96 @@
 .App {
   text-align: center;
+  background-color: #51a7bd;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  max-height: 20vh;
+  box-shadow: 1px 1px 5px #000000;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #dd6300;
+  height: 15vh;
+  margin: 5vh;
+  margin-top: 0%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(40px + 2vmin);
   color: white;
 }
 
 .App-main {
-  background-color: #282c34;
-  min-height: 10vh;
-  margin-top: 1%;
+  box-shadow: 1px 1px 5px #000000;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #dd6300;
+  min-height: 80vh;
+  margin: 5vh;
+  margin-bottom: 0%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Weather {
+  box-shadow: 1px 1px 5px #000000;
+  border-radius: 10px;
+  background-color: #51a7bd;
+  max-height: 90vh;
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Weather-title {
+  box-shadow: 1px 1px 5px #000000;
+  border-radius: 10px;
+  background-color: #005a70;
+  padding: 2%;
+  font-size: calc(20px + 2vmin);
+  margin: 3% 0%;
+}
+
+.Weather-content{
+  box-shadow: 1px 1px 5px #000000;
+  border-radius: 10px;
+  background-color: #005a70;
+  margin: 3% 0%;
+}
+
+.Weather-results {
+  color: #e0ff70;
+}
+
+.Weather-error {
+  color: #ff7b7b;
+  padding: 1%;
+}
+
+.Margin{
+  border-radius: 5px;
+  margin: 1%;
+}
+
+.Padding{
+  padding: 1%;
+}
+
+.Main-div{
+  margin: 1%;
+  width: 100%;
+}
+
+button {
+  box-shadow: 1px 1px 5px #000000;
+  text-shadow: 1px 1px 3px #000000;
+  cursor: pointer;
+  background-color: #007a99;
+  border-color: #51a7bd;
+  color: #ffffff;
 }

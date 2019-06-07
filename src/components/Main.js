@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import {Container, Row, Col} from 'react-bootstrap';
+
 import Form from './Form';
 import Weather from './Weather';
 import countries from '../countries';
@@ -130,13 +132,25 @@ export default class Main extends Component {
 
     render(){
         return(
-            <div>
-                <Form getWeather={this.getWeather}/>
-                <Weather temperature={this.state.temperatureOWM} city={this.state.cityOWM} country={this.state.countryOWM}
-                humidity={this.state.humidityOWM} description={this.state.descriptionOWM} error={this.state.errorOWM}/>
-                <Weather temperature={this.state.temperatureACCU} city={this.state.cityACCU} country={this.state.countryACCU}
-                humidity={this.state.humidityACCU} description={this.state.descriptionACCU} error={this.state.errorACCU}/>
+            <div className="Main-div">
+                <div className="Margin">
+                    <Form getWeather={this.getWeather}/>
+                </div>
+                <Container>
+                    <Row>
+                        <Col className="Weather">
+                            <Weather title={'Open Weather Map'} temperature={this.state.temperatureOWM} city={this.state.cityOWM} country={this.state.countryOWM}
+                            humidity={this.state.humidityOWM} description={this.state.descriptionOWM} error={this.state.errorOWM}/>
+                        </Col>
+                        <Col className="Weather">
+                            <Weather title={'AccuWeather'} temperature={this.state.temperatureACCU} city={this.state.cityACCU} country={this.state.countryACCU}
+                            humidity={this.state.humidityACCU} description={this.state.descriptionACCU} error={this.state.errorACCU}/>
+                        </Col>
+                        
+                    </Row>
+                </Container>
             </div>
         );
     };
+    
 };
