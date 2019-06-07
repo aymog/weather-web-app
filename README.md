@@ -11,8 +11,8 @@ A database schema describing how the retrieved data for each city should be stor
 
 ## To Run Locally
 
-This project has been developed using React.js
-the node packages manager is needed to compile and run in locally
+This project has been developed using React.js.  
+The node packages manager is needed to compile and run in locally.
 
 #### 1. Download the project files
 #### 2. Install all the node packages required by running 'npm install'
@@ -21,7 +21,7 @@ the node packages manager is needed to compile and run in locally
 
 #### `npm start`
 
-Runs the app in the development mode.<br>
+This runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
@@ -31,7 +31,7 @@ You will also see any lint errors in the console.
   In the project directory, you can run:
  #### `npm install -g serve`
  #### `serve -s build`
- This will serve your static site on the local port 5000.  
+ This will serve your site on the local port 5000.  
  Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
   
  #### c. In the project directory, you can run:
