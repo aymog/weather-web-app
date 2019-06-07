@@ -60,7 +60,7 @@ export default class Main extends Component {
     };
 
     getAccuData = async (locationKey) =>{
-        const accuData = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${ACCU_API_KEY}&details=true`)
+        const accuData = await fetch(`https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${ACCU_API_KEY}&details=true`)
         .then((response) => {
             return response.json();
         }).catch((error)=>{
@@ -83,7 +83,7 @@ export default class Main extends Component {
         const countryCode = this.getCode(country);
 
         //API call
-        const data = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/${countryCode}/search?apikey=${ACCU_API_KEY}&q=${city}`)
+        const data = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/${countryCode}/search?apikey=${ACCU_API_KEY}&q=${city}`)
         .then((response) => {
             return response.json(); 
         }).then((response) => {
