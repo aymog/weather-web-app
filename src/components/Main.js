@@ -28,8 +28,14 @@ export default class Main extends Component {
 
     getWeatherOWM = async (city, country) => {
 
+        let url = '';
+        if(country === ''){
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OWM_API_KEY}&units=metric`;
+        }else{
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${OWM_API_KEY}&units=metric`;
+        }
         //API call
-        const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${OWM_API_KEY}&units=metric`)
+        const data = await fetch(url)
         .then((response) => {
             return response.json();
         }).catch((error)=>{
@@ -71,8 +77,13 @@ export default class Main extends Component {
 
     getCode = (country) => {
         let code = undefined;
+        if(country === ''){
+            return code;
+        }
         countries.forEach(element => {
-            if(element.country.toLowerCase() === country.toLowerCase()){
+            let elCountry = element.country.toLowerCase();
+            let c = country.toLowerCase();
+            if(elCountry.includes(c)){
                 code = element.abbreviation.toLowerCase();
             }
         });
@@ -81,14 +92,20 @@ export default class Main extends Component {
     getWeatherAccu = async (city, country) => {
 
         const countryCode = this.getCode(country);
-
+        let locationInfo = undefined;
+        let url = '';
         //API call
-        const data = await fetch(`https://dataservice.accuweather.com/locations/v1/cities/${countryCode}/search?apikey=${ACCU_API_KEY}&q=${city}`)
+        if(countryCode === undefined){
+            url = `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=${ACCU_API_KEY}&q=${city}`;
+        }else{
+            url = `https://dataservice.accuweather.com/locations/v1/cities/${countryCode}/search?apikey=${ACCU_API_KEY}&q=${city}`;
+        }
+        const data = await fetch(url)
         .then((response) => {
             return response.json(); 
         }).then((response) => {
-            let locationKey = response[0].Key;
-            return locationKey;
+            locationInfo = response[0];
+            return locationInfo.Key;
         }).then((response) => {
             return this.getAccuData(response);
         }).catch((error)=>{
@@ -100,8 +117,8 @@ export default class Main extends Component {
         if(data !== undefined){ //City was found
             this.setState({
                 temperatureACCU: data.Temperature.Metric.Value,
-                cityACCU: city,
-                countryACCU: countryCode,
+                cityACCU: locationInfo.EnglishName, 
+                countryACCU: locationInfo.Country.ID, //locationInfor.Country.EnglishName, cn be used for full name of the country
                 humidityACCU: data.RelativeHumidity,
                 descriptionACCU: data.WeatherText,
                 errorACCU:''
