@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-  background-color: #51a7bd;
+  background-color: #800000;
 }
 
 .App-header {
   box-shadow: 1px 1px 5px #000000;
   border-radius: 0px 0px 10px 10px;
-  background-color: #dd6300;
+  background-color: #00232e;
   height: 15vh;
   margin: 5vh;
   margin-top: 0%;
@@ -21,7 +21,7 @@
 .App-main {
   box-shadow: 1px 1px 5px #000000;
   border-radius: 10px 10px 0px 0px;
-  background-color: #dd6300;
+  background-color: #00232e;
   min-height: 80vh;
   margin: 5vh;
   margin-bottom: 0%;
@@ -36,7 +36,7 @@
 .Weather {
   box-shadow: 1px 1px 5px #000000;
   border-radius: 10px;
-  background-color: #51a7bd;
+  background-color: #800000;
   max-height: 90vh;
   margin: 1%;
   display: flex;
